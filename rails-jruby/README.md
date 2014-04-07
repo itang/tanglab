@@ -82,9 +82,11 @@ $ jruby -S gem install warbler
 
 $ jruby -S warble config 
 
+h2 server
+$ java -cp h2*.jar org.h2.tools.Server
+
 $ RAILS_ENV=production jruby -S rake db:migrate
  
-
 edit  config/warble.rb
 
     # Additional files/directories to include, above those in config.dirs
@@ -113,4 +115,14 @@ bundle update
 $ bin/rails s puma 
 or
 $ rackup -s Puma
+
+### jubilee (vert.x)
+$ jruby -S gem install jubilee
+
+$ RACK_ENV=production jubilee
+
+bench:
+
+$ wrk  -t4 -c2000 http://localhost:8080/comments
+
 

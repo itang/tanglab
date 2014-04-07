@@ -21,6 +21,6 @@ test:
 
 production:
   adapter: h2
-  database: db/production
+  url: jdbc:h2:tcp://localhost/~/db/production
   username: sa
   password: 
